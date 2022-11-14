@@ -66,4 +66,3 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: Open Issue
         if: failure() && github.event_name == 'pull_request'
-
