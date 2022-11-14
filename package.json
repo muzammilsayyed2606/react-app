@@ -21,7 +21,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'"
+      "commit-msg": "npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'",
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
     }
   },
   "eslintConfig": {
@@ -45,8 +46,14 @@
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.2",
     "prettier": "2.7.1",
     "semantic-release": "^19.0.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
